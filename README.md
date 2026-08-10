@@ -5,7 +5,7 @@ Credibility site for Haytham Builds — a founder-led outbound systems partner f
 ## What is included
 
 - Responsive single-page site
-- Custom CSS 3D Resolved Frame hero
+- Interactive WebGL Resolved Frame hero
 - Scroll and pointer motion with reduced-motion support
 - Real founder portrait and Haytham Builds production marks
 - Verified company logo assets with a unified neutral treatment
