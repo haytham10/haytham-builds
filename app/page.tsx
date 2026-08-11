@@ -373,7 +373,7 @@ export default function Home() {
               unoptimized
             />
             <div className="footer-links">
-              <a href="https://www.linkedin.com/in/haytham-mokhtari/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://www.linkedin.com/company/haytham-builds" target="_blank" rel="noreferrer">LinkedIn</a>
               <a href={bookingUrl} target="_blank" rel="noreferrer">Book a call</a>
             </div>
           </div>
