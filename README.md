@@ -34,12 +34,15 @@ npm run build
 - `app/page.tsx` — page content and interactions
 - `app/globals.css` — visual system, layout, motion, and 3D treatment
 - `app/layout.tsx` — document metadata and font setup
+- `app/components/Icons.tsx` — the shared 24px line-icon set
 - `public/brand/` — Haytham Builds production logos
 - `public/logos/` — third-party company marks used in the experience section
 
 ## Brand
 
-Charcoal `#171717`, warm off-white `#F3F0E8`, muted sand `#C7A96B`, stone grey `#8E8B84`, and warm ivory `#F5F2EA`. Inter is used throughout.
+Charcoal `#171717`, warm off-white `#F3F0E8`, muted sand `#C7A96B`, stone grey `#8E8B84`, and warm ivory `#F5F2EA`.
+
+Type is set in Inter Tight (headings, UI, body) with Instrument Serif italic reserved for the accent words inside headings and the founder pull quote. Icons share one 24px grid with a 1.5px hairline stroke and a single solid sand element, echoing the sand block in the logo.
 
 ## Third-party marks
 

@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Instrument_Serif, Inter_Tight } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
+  weight: "400",
   style: ["normal", "italic"],
-  axes: ["opsz", "SOFT", "WONK"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Haytham Builds — We Build the Pipeline",
+  title: "Haytham Builds | We build the pipeline",
   description:
     "Haytham Builds finds the companies, maps the buyer, runs the outreach and books the call when there is a real fit.",
   other: {
@@ -34,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${fraunces.variable} antialiased`}>
+      <body className={`${interTight.variable} ${instrumentSerif.variable} antialiased`}>
         {children}
       </body>
     </html>

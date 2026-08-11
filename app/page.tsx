@@ -1,40 +1,107 @@
 import Image from "next/image";
 import Fx from "./components/Fx";
+import {
+  IconBars,
+  IconBrief,
+  IconCalendar,
+  IconCheckCircle,
+  IconCheckFrame,
+  IconEnvelope,
+  IconList,
+  IconOrgChart,
+  IconPeople,
+  IconRoute,
+  IconScope,
+} from "./components/Icons";
 
 const bookingUrl = "https://calendar.app.google/XCpJyd1jZ4tvqL3C9";
+
+const funnel = [
+  { stage: "Accounts researched", value: "120", width: "100%" },
+  { stage: "Outreach written and sent", value: "96", width: "78%" },
+  { stage: "Conversations opened", value: "24", width: "34%" },
+  { stage: "Calls booked", value: "6", width: "16%" },
+];
 
 const steps = [
   {
     number: "01",
+    tag: "Research",
     title: "Define the market",
     copy: "We get specific about the companies that should care, the problem you solve, and the signals that make an account worth pursuing.",
-    tag: "Research",
+    icon: <IconScope />,
   },
   {
     number: "02",
-    title: "Build the account list",
-    copy: "You get a focused list of organisations with a real reason to buy — not a database export dressed up as research.",
     tag: "Targeting",
+    title: "Build the account list",
+    copy: "You get a focused list of organisations with a real reason to buy, not a database export dressed up as research.",
+    icon: <IconList />,
   },
   {
     number: "03",
+    tag: "Outreach",
     title: "Reach the right people",
     copy: "We identify the people who own the problem and the budget, verify the route in, and write outreach around what matters to them.",
-    tag: "Outreach",
+    icon: <IconEnvelope />,
   },
   {
     number: "04",
+    tag: "Booking",
     title: "Turn interest into calls",
     copy: "We run the follow-up, handle replies, and put a meeting on your calendar when the problem, timing, and fit are real.",
-    tag: "Booking",
+    icon: <IconCalendar />,
   },
 ];
 
 const proofItems = [
-  ["Account fit", "The evidence that this company belongs on the list — not a hunch, a reason."],
-  ["Buyer map", "Who owns the problem, who can move the budget, and how they relate."],
-  ["Message brief", "A relevant reason to start this particular conversation, in writing."],
-  ["Contact path", "A verified route in, across email and LinkedIn."],
+  {
+    title: "Account fit",
+    copy: "The evidence that this company belongs on your list. A reason, not a hunch.",
+    icon: <IconCheckFrame />,
+  },
+  {
+    title: "Buyer map",
+    copy: "Who owns the problem, who can move the budget, and how the two relate.",
+    icon: <IconOrgChart />,
+  },
+  {
+    title: "Message brief",
+    copy: "A relevant reason to start this particular conversation, written down before anything is sent.",
+    icon: <IconBrief />,
+  },
+  {
+    title: "Contact path",
+    copy: "A verified route in, across email and LinkedIn, so nothing lands in the wrong inbox.",
+    icon: <IconRoute />,
+  },
+];
+
+const results = [
+  {
+    value: "416",
+    prefix: "AED ",
+    suffix: "K+",
+    label: "Revenue closed from pipeline we built",
+    note: "Across client engagements in outbound-led services",
+    icon: <IconBars />,
+  },
+  {
+    value: "120",
+    prefix: "",
+    suffix: "+",
+    label: "Qualified meetings booked",
+    note: "Counted only when problem, timing and fit were real",
+    icon: <IconCheckCircle />,
+  },
+  {
+    value: "50",
+    prefix: "",
+    suffix: "+",
+    label: "Clients closed from those meetings",
+    note: "Conversations that started completely cold",
+    icon: <IconPeople />,
+  },
 ];
 
 const logos = [
@@ -84,6 +151,7 @@ export default function Home() {
             />
           </a>
           <nav aria-label="Primary navigation">
+            <a href="#results">Results</a>
             <a href="#process">How it works</a>
             <a href="#proof">The work</a>
             <a href="#about">About</a>
@@ -98,7 +166,9 @@ export default function Home() {
         <div className="hero-copy">
           <p className="status-pill" data-reveal>
             <span className="status-dot" aria-hidden="true" />
-            Taking on new clients — founder-led outbound for B2B services
+            Taking on new clients
+            <span className="pill-sep" aria-hidden="true" />
+            <span className="pill-soft">Founder-led outbound for B2B services</span>
           </p>
           <h1 data-reveal style={{ transitionDelay: ".08s" }}>
             A calendar full of the <em>right</em> conversations.
@@ -115,27 +185,45 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="dossier" aria-label="Sample account dossier" data-reveal style={{ transitionDelay: ".2s" }}>
-          <div className="dossier-head">
-            <span className="dossier-label">Account dossier</span>
-            <span className="dossier-badge">Illustrative sample</span>
+        <aside className="panel" aria-label="Sample pipeline snapshot" data-reveal style={{ transitionDelay: ".2s" }}>
+          <div className="panel-head">
+            <span className="panel-label">
+              <span className="panel-mark" aria-hidden="true" />
+              Pipeline snapshot
+            </span>
+            <span className="panel-badge">Illustrative</span>
           </div>
-          <div className="dossier-title">
-            <span className="dossier-dot" aria-hidden="true" />
-            <strong>Meridian Advisory Group</strong>
-            <span className="dossier-fit">Fit — strong</span>
+          <p className="panel-sub">One offer, one month of work, start to finish.</p>
+
+          <ul className="funnel">
+            {funnel.map((row, i) => (
+              <li key={row.stage} className="funnel-row">
+                <span className="funnel-stage">{row.stage}</span>
+                <span className="funnel-value">{row.value}</span>
+                <span className="funnel-bar" aria-hidden="true">
+                  <span style={{ width: row.width, transitionDelay: `${0.35 + i * 0.09}s` }} />
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="panel-foot">
+            <div>
+              <span>Reply rate</span>
+              <strong>25%</strong>
+            </div>
+            <div>
+              <span>Research to call</span>
+              <strong>5%</strong>
+            </div>
+            <div>
+              <span>Reporting</span>
+              <strong>Weekly</strong>
+            </div>
           </div>
-          <dl className="dossier-rows">
-            <div><dt>Why they made the list</dt><dd>Opened a second market, no outbound motion in place</dd></div>
-            <div><dt>Buyer</dt><dd>Managing partner — owns growth, controls budget</dd></div>
-            <div><dt>Message brief</dt><dd>Anchored to their expansion, not a generic pitch</dd></div>
-            <div><dt>Route in</dt><dd>Verified email + LinkedIn, warm angle via shared network</dd></div>
-          </dl>
-          <div className="dossier-status">
-            <span>Status</span>
-            <strong>Reply received → call booked</strong>
-          </div>
-          <p className="dossier-note">Every account we contact is researched to this depth — and you can see all of it.</p>
+          <p className="panel-note">
+            This is the view you get each week, with every account named and every reason written down.
+          </p>
         </aside>
       </section>
 
@@ -147,21 +235,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="results" aria-label="Selected client results">
-        <div className="results-inner">
-          <p data-reveal>Results across two years of client pipeline work</p>
-          <div data-reveal style={{ transitionDelay: ".05s" }}>
-            <strong><span data-count="416" data-prefix="AED " data-suffix="K+">AED 416K+</span></strong>
-            <span>revenue from pipeline</span>
-          </div>
-          <div data-reveal style={{ transitionDelay: ".12s" }}>
-            <strong><span data-count="120" data-suffix="+">120+</span></strong>
-            <span>qualified meetings booked</span>
-          </div>
-          <div data-reveal style={{ transitionDelay: ".19s" }}>
-            <strong><span data-count="50" data-suffix="+">50+</span></strong>
-            <span>clients closed</span>
-          </div>
+      <section className="results section" id="results" aria-label="Results to date">
+        <div className="results-head" data-reveal>
+          <p className="eyebrow">Results to date</p>
+          <h2>Two years of pipeline work, in <em>three numbers</em>.</h2>
+          <p className="results-lead">
+            Built the same way every time: research first, then outreach, then a call that
+            was worth putting on the calendar.
+          </p>
+        </div>
+        <div className="results-grid">
+          {results.map((item, i) => (
+            <article key={item.label} className="stat" data-reveal style={{ transitionDelay: `${i * 0.08}s` }}>
+              <span className="stat-icon" aria-hidden="true">{item.icon}</span>
+              <strong>
+                <span data-count={item.value} data-prefix={item.prefix} data-suffix={item.suffix}>
+                  {item.prefix}{item.value}{item.suffix}
+                </span>
+              </strong>
+              <span className="stat-label">{item.label}</span>
+              <span className="stat-note">{item.note}</span>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -171,43 +266,50 @@ export default function Home() {
             <p className="eyebrow">How it works</p>
             <h2>Research first.<br />Outreach second.<br /><em>Meetings that count.</em></h2>
             <p className="rail-copy">
-              A meeting only goes on your calendar when the problem, the timing, and the fit are real.
+              Four steps, run in order, with nothing skipped. A meeting only goes on your
+              calendar when the problem, the timing, and the fit are real.
             </p>
             <a href={bookingUrl} target="_blank" rel="noreferrer" className="text-link">
               Walk through it with me <Arrow />
             </a>
           </div>
         </div>
-        <div className="steps">
+        <ol className="steps">
           {steps.map((step, i) => (
-            <article key={step.number} className="step" data-reveal style={{ transitionDelay: `${i * 0.06}s` }}>
-              <span className="step-number" aria-hidden="true">{step.number}</span>
+            <li key={step.number} className="step" data-reveal style={{ transitionDelay: `${i * 0.06}s` }}>
+              <span className="step-icon" aria-hidden="true">{step.icon}</span>
               <div className="step-body">
-                <span className="step-tag">{step.tag}</span>
+                <p className="step-meta">
+                  <span className="step-number">{step.number}</span>
+                  <span className="step-tag">{step.tag}</span>
+                </p>
                 <h3>{step.title}</h3>
-                <p>{step.copy}</p>
+                <p className="step-copy">{step.copy}</p>
               </div>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       <section className="proof section" id="proof">
         <div className="proof-heading" data-reveal>
           <p className="eyebrow">The work</p>
-          <h2>You can see why every account made the list.</h2>
+          <h2>You can see why every account <em>made the list</em>.</h2>
           <p className="proof-lead">
             No mystery list and no generic sequence. The research behind the outreach is
             visible, so you know who we are contacting, why they fit, and what gives us a
-            credible route in. Every account ships with four things:
+            credible route in. Every account ships with four things.
           </p>
         </div>
         <div className="proof-grid">
-          {proofItems.map(([title, copy], index) => (
-            <article key={title} data-reveal style={{ transitionDelay: `${index * 0.07}s` }}>
-              <span className="proof-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{title}</h3>
-              <p>{copy}</p>
+          {proofItems.map((item, index) => (
+            <article key={item.title} data-reveal style={{ transitionDelay: `${index * 0.07}s` }}>
+              <span className="proof-icon" aria-hidden="true">{item.icon}</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+              <span className="proof-number" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
             </article>
           ))}
         </div>
@@ -222,10 +324,10 @@ export default function Home() {
             height={820}
             unoptimized
           />
-          <span className="about-caption">Haytham Mokhtari — Casablanca</span>
+          <span className="about-caption">Haytham Mokhtari, Casablanca</span>
         </div>
         <div className="about-copy" data-reveal style={{ transitionDelay: ".1s" }}>
-          <p className="eyebrow">Founder / operator</p>
+          <p className="eyebrow">Founder and operator</p>
           <h2>Hi, I&apos;m Haytham.</h2>
           <p className="about-lead">
             I do the research, build the lists, write the outreach, and keep the system moving.
@@ -233,7 +335,7 @@ export default function Home() {
           <p>
             My background is in software and systems. It taught me to pay attention to the whole
             process, not just the final message. You will not be handed to an account manager
-            after the first call — you work with me directly, from research to booked meeting.
+            after the first call. You work with me directly, from research to booked meeting.
           </p>
           <a
             href="https://www.linkedin.com/in/haytham-mokhtari/"
@@ -252,7 +354,7 @@ export default function Home() {
           <h2>Let&apos;s see if outbound <em>makes sense</em> for it.</h2>
           <p>
             Send me the offer, who it is for, and where you want to sell it.
-            I&apos;ll give you a direct answer — even if that answer is no.
+            I&apos;ll give you a direct answer, even if that answer is no.
           </p>
           <a href={bookingUrl} target="_blank" rel="noreferrer" className="button button-light">
             Book a conversation <Arrow />
