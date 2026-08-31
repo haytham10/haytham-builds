@@ -29,7 +29,10 @@ test("renders development preview metadata", async () => {
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  assert.match(await response.text(), developmentPreviewMeta);
+  const html = await response.text();
+  assert.match(html, developmentPreviewMeta);
+  assert.match(html, /Haytham Builds LLC/i);
+  assert.match(html, /href=["']tel:\+19145065175["']/i);
 });
 
 test("renders all policy pages with the legal entity and policy navigation", async () => {
@@ -63,6 +66,7 @@ test("renders all policy pages with the legal entity and policy navigation", asy
     assert.match(html, new RegExp(`<h1[^>]*>${heading}</h1>`, "i"), route);
     assert.match(html, /Haytham Builds LLC/i, route);
     assert.match(html, /5203 Juan Tabo Blvd STE 2B/i, route);
+    assert.match(html, /href=["']tel:\+19145065175["']/i, route);
     assert.match(html, /href=["']\/privacy-policy["']/i, route);
     assert.match(html, /href=["']\/refund-policy["']/i, route);
     assert.match(html, /href=["']\/terms-of-service["']/i, route);

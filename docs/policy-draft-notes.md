@@ -7,6 +7,7 @@ Status: local draft only. Not published or deployed.
 - Legal entity: Haytham Builds LLC.
 - Formation and governing-law state: New Mexico.
 - Registered business address used on the policies: 5203 Juan Tabo Blvd STE 2B, Albuquerque, NM 87111.
+- Public business phone number: +1 914 506 5175.
 - The registered agent's Suite 2A address is not used.
 - The current website has no account registration, contact form, checkout, advertising pixel, or website analytics integration.
 - The website links to Google Calendar and LinkedIn and is hosted on Vercel.
@@ -25,6 +26,7 @@ Status: local draft only. Not published or deployed.
 ## Recheck before publication
 
 - Confirm the contact email is monitored.
+- Confirm the public business phone can receive calls and is monitored.
 - The domain has Zoho MX records and an SPF record, but DNS alone does not prove that this exact mailbox can receive messages.
 - Confirm the refund rules against the final services agreement and actual payment flow.
 - Keep the registered business address separate from the physical operating address in provider applications. Do not enter the formation or registered-agent address as the principal place of business when a bank or payment provider asks for the real operating address.

@@ -46,6 +46,7 @@ export default function PolicyPage({ title, summary, children }: PolicyPageProps
         <div>
           <strong>Haytham Builds LLC</strong>
           <span>Registered business address: 5203 Juan Tabo Blvd STE 2B, Albuquerque, NM 87111</span>
+          <a href="tel:+19145065175">+1 914 506 5175</a>
         </div>
         <nav aria-label="Policy navigation">
           {policyLinks.map(([label, href]) => (

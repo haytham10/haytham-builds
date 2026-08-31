@@ -331,7 +331,8 @@ export default function Home() {
           <p className="eyebrow">Founder and operator</p>
           <h2>Hi, I&apos;m Haytham.</h2>
           <p className="about-lead">
-            I do the research, build the lists, write the outreach, and keep the system moving.
+            I run Haytham Builds LLC myself. I do the research, build the lists, write the
+            outreach, and keep the system moving.
           </p>
           <p>
             My background is in software and systems. It taught me to pay attention to the whole
@@ -377,6 +378,7 @@ export default function Home() {
               <a href="https://www.linkedin.com/company/haytham-builds" target="_blank" rel="noreferrer">LinkedIn</a>
               <a href={bookingUrl} target="_blank" rel="noreferrer">Book a call</a>
               <a href="mailto:haythammokhtari@haythambuilds.com">Email</a>
+              <a href="tel:+19145065175">+1 914 506 5175</a>
               <Link href="/privacy-policy">Privacy</Link>
               <Link href="/refund-policy">Refunds</Link>
               <Link href="/terms-of-service">Terms</Link>
@@ -385,7 +387,7 @@ export default function Home() {
           <p className="footer-wordmark" aria-hidden="true">Haytham Builds</p>
           <div className="footer-bottom">
             <span>Casablanca / Working across markets</span>
-            <span>© {new Date().getFullYear()} Haytham Builds</span>
+            <span>© {new Date().getFullYear()} Haytham Builds LLC</span>
           </div>
         </div>
       </footer>
