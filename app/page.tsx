@@ -363,7 +363,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
+      <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-top">
             <Image

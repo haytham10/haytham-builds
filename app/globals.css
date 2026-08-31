@@ -27,7 +27,11 @@ body {
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--ink); }
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+  overflow-x: clip;
+}
 body {
   margin: 0;
   color: var(--ink);
@@ -700,7 +704,7 @@ h2 {
 .final-cta .button { position: relative; }
 
 /* ---- footer ---- */
-footer {
+.site-footer {
   color: rgba(244, 241, 232, .55);
   background: var(--ink);
   border-top: 1px solid rgba(244, 241, 232, .1);
