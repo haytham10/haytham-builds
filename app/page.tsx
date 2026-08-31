@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Fx from "./components/Fx";
 import {
   IconBars,
@@ -375,6 +376,10 @@ export default function Home() {
             <div className="footer-links">
               <a href="https://www.linkedin.com/company/haytham-builds" target="_blank" rel="noreferrer">LinkedIn</a>
               <a href={bookingUrl} target="_blank" rel="noreferrer">Book a call</a>
+              <a href="mailto:haythammokhtari@haythambuilds.com">Email</a>
+              <Link href="/privacy-policy">Privacy</Link>
+              <Link href="/refund-policy">Refunds</Link>
+              <Link href="/terms-of-service">Terms</Link>
             </div>
           </div>
           <p className="footer-wordmark" aria-hidden="true">Haytham Builds</p>
