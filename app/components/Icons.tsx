@@ -134,3 +134,59 @@ export function IconPeople() {
     </Svg>
   );
 }
+
+export function IconInbox() {
+  return (
+    <Svg>
+      <path d="M3.25 13.5 5.6 5.4a2 2 0 0 1 1.92-1.4h8.96a2 2 0 0 1 1.92 1.4l2.35 8.1V18a2 2 0 0 1-2 2H5.25a2 2 0 0 1-2-2z" />
+      <path d="M3.5 13.5h4.25l1.5 2.5h5.5l1.5-2.5h4.25" />
+      <rect className="mk" x="9.9" y="7.4" width="4.2" height="3.4" rx="0.8" />
+    </Svg>
+  );
+}
+
+export function IconReply() {
+  return (
+    <Svg>
+      <path d="M20.75 12.25a7.5 7.5 0 0 1-10.9 6.68L4 20.25l1.4-4.55A7.5 7.5 0 1 1 20.75 12.25z" />
+      <rect className="mk" x="10.4" y="10.65" width="3.2" height="3.2" rx="0.7" />
+    </Svg>
+  );
+}
+
+export function IconPlaybook() {
+  return (
+    <Svg>
+      <path d="M12 6.25C10.5 4.9 8.3 4.25 4.25 4.25v14.5c4.05 0 6.25.65 7.75 2 1.5-1.35 3.7-2 7.75-2V4.25c-4.05 0-6.25.65-7.75 2z" />
+      <path d="M12 6.25v14.5" />
+      <rect className="mk" x="14.4" y="8.2" width="3.3" height="3.3" rx="0.7" />
+    </Svg>
+  );
+}
+
+export function IconShield() {
+  return (
+    <Svg>
+      <path d="M12 2.9 4.25 5.75v5.9c0 4.6 3.2 8.2 7.75 9.45 4.55-1.25 7.75-4.85 7.75-9.45v-5.9z" />
+      <path className="mks" d="m8.5 12.1 2.4 2.4 4.6-4.75" />
+    </Svg>
+  );
+}
+
+export function IconFilter() {
+  return (
+    <Svg>
+      <path d="M3.25 4.75h17.5l-6.75 8v6.5l-4 1.75v-8.25z" />
+      <rect className="mk" x="16.6" y="15.1" width="4.4" height="4.4" rx="0.9" />
+    </Svg>
+  );
+}
+
+export function IconHand() {
+  return (
+    <Svg>
+      <path d="M8.25 12.25V5a1.5 1.5 0 0 1 3 0v6M11.25 10.5V3.75a1.5 1.5 0 0 1 3 0v6.75M14.25 10.5V5.5a1.5 1.5 0 0 1 3 0V14c0 4-2.6 6.75-6.25 6.75-2.35 0-3.75-1-5.1-2.95l-2.3-3.4a1.45 1.45 0 0 1 2.35-1.7l2.3 2.05" />
+      <rect className="mk" x="17.7" y="2.6" width="3.6" height="3.6" rx="0.8" />
+    </Svg>
+  );
+}

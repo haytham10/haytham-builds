@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 type PolicyPageProps = {
   title: string;
   summary: string;
+  updated?: string;
   children: ReactNode;
 };
 
@@ -14,7 +15,7 @@ const policyLinks = [
   ["Terms of Service", "/terms-of-service"],
 ] as const;
 
-export default function PolicyPage({ title, summary, children }: PolicyPageProps) {
+export default function PolicyPage({ title, summary, updated, children }: PolicyPageProps) {
   return (
     <main className="policy-shell">
       <header className="policy-header">
@@ -37,7 +38,11 @@ export default function PolicyPage({ title, summary, children }: PolicyPageProps
           <p className="eyebrow">Legal</p>
           <h1>{title}</h1>
           <p className="policy-summary">{summary}</p>
-          <p className="policy-date">Effective and last updated: August 31, 2026</p>
+          <p className="policy-date">
+            {updated
+              ? `Effective August 31, 2026. Last updated ${updated}.`
+              : "Effective and last updated: August 31, 2026"}
+          </p>
         </div>
         <div className="policy-copy">{children}</div>
       </article>

@@ -131,8 +131,8 @@ export default function PrivacyPolicy() {
         </p>
         <p>
           To make a request, email{" "}
-          <a href="mailto:haythammokhtari@haythambuilds.com">
-            haythammokhtari@haythambuilds.com
+          <a href="mailto:haytham@gethaytham.com">
+            haytham@gethaytham.com
           </a>
           . We may need to verify your identity before completing a request.
         </p>
@@ -170,8 +170,8 @@ export default function PrivacyPolicy() {
           <br />
           <a href="tel:+19145065175">+1 914 506 5175</a>
           <br />
-          <a href="mailto:haythammokhtari@haythambuilds.com">
-            haythammokhtari@haythambuilds.com
+          <a href="mailto:haytham@gethaytham.com">
+            haytham@gethaytham.com
           </a>
         </address>
       </section>

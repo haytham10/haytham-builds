@@ -1,5 +1,7 @@
+import { createReadStream, statSync } from "node:fs";
+import path from "node:path";
 import vinext from "vinext";
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import hostingConfig from "./.openai/hosting.json";
 import { sites } from "./build/sites-vite-plugin";
 
@@ -33,6 +35,33 @@ const localBindingConfig = {
     : [],
 };
 
+// The committed .vinext/fonts cache was generated on Linux, so its CSS points at
+// /home/user/haytham-builds/.vinext/fonts/... Production builds resolve that
+// path, but local dev on other machines 404s and falls back to Arial. Dev only:
+// serve any */.vinext/fonts/* request from this checkout's cache.
+function localFontCache(): Plugin {
+  const fontsDir = path.resolve(".vinext", "fonts");
+  return {
+    name: "local-font-cache",
+    apply: "serve",
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const match = req.url?.match(/\/\.vinext\/fonts\/([^?#]+)/);
+        if (!match) return next();
+        const file = path.resolve(fontsDir, decodeURIComponent(match[1]));
+        if (!file.startsWith(fontsDir + path.sep)) return next();
+        try {
+          if (!statSync(file).isFile()) return next();
+        } catch {
+          return next();
+        }
+        res.setHeader("Content-Type", file.endsWith(".woff2") ? "font/woff2" : "application/octet-stream");
+        createReadStream(file).pipe(res);
+      });
+    },
+  };
+}
+
 export default defineConfig(async () => {
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
   // settings; application environment belongs in ignored `.env*` files.
@@ -52,6 +81,7 @@ export default defineConfig(async () => {
         : {}),
     },
     plugins: [
+      localFontCache(),
       vinext(),
       sites(),
       cloudflare({

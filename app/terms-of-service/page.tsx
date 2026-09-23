@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import PolicyPage from "../components/PolicyPage";
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function TermsOfService() {
   return (
     <PolicyPage
+      updated="September 23, 2026"
       title="Terms of Service"
       summary="These terms govern access to haythambuilds.com. Client services are governed by the separate written agreement for the engagement."
     >
@@ -55,6 +57,12 @@ export default function TermsOfService() {
           the same or any particular result. Commercial outcomes depend on factors outside
           Haytham Builds&apos; control, including the offer, market, timing, client inputs, and buyer
           decisions.
+        </p>
+        <p>
+          The only exception is the conditional qualified-call guarantee that comes with The First
+          Five pilot. It applies only as described in the{" "}
+          <Link href="/refund-policy">Refund Policy</Link> and the written client agreement, and it
+          covers qualified calls, not clients or revenue.
         </p>
       </section>
 
@@ -166,8 +174,8 @@ export default function TermsOfService() {
           <br />
           <a href="tel:+19145065175">+1 914 506 5175</a>
           <br />
-          <a href="mailto:haythammokhtari@haythambuilds.com">
-            haythammokhtari@haythambuilds.com
+          <a href="mailto:haytham@gethaytham.com">
+            haytham@gethaytham.com
           </a>
         </address>
       </section>

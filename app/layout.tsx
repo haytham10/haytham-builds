@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter_Tight } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "./globals.css";
+import "./policy.css";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -8,18 +9,18 @@ const interTight = Inter_Tight({
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Haytham Builds | We build the pipeline",
+  title: "Haytham Builds | The First Five: outbound for coaches selling into the Gulf",
   description:
-    "Haytham Builds finds the companies, maps the buyer, runs the outreach and books the call when there is a real fit.",
+    "A 30-day outbound pilot for coaches who want UAE and Gulf corporate clients. Researched outreach, checked by me, and five qualified calls, or I keep sending free. $1,500.",
+  openGraph: {
+    title: "The First Five by Haytham Builds",
+    description:
+      "You keep coaching. I run the outbound. Five qualified calls with Gulf corporate buyers in 30 days, or I keep sending free.",
+    url: "https://haythambuilds.com",
+    siteName: "Haytham Builds",
+    type: "website",
+  },
   other: {
     "codex-preview": "development",
   },
@@ -35,8 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${interTight.variable} ${instrumentSerif.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${interTight.variable} antialiased`}>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {children}
       </body>
     </html>

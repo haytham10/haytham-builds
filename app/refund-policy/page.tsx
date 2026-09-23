@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function RefundPolicy() {
   return (
     <PolicyPage
+      updated="September 23, 2026"
       title="Refund Policy"
       summary="Haytham Builds provides business services rather than physical goods. This policy explains how cancellations and refunds are handled when a signed agreement does not set a different rule."
     >
@@ -30,9 +31,11 @@ export default function RefundPolicy() {
       <section>
         <h2>Pricing and service delivery</h2>
         <p>
-          Haytham Builds provides custom professional services. Fees, deliverables, timing, and
-          payment terms are confirmed in writing before payment is due. The website does not
-          publish standard prices or sell leads, traffic, or guaranteed commercial outcomes.
+          Haytham Builds provides professional services. The standard price of The First Five
+          pilot ($1,500 for 30 days) is published on the website. For every engagement, fees,
+          deliverables, timing, and payment terms are confirmed in writing before payment is due.
+          The website does not take payments and does not sell leads, traffic, or guaranteed
+          commercial outcomes, other than the qualified-call guarantee described below.
         </p>
       </section>
 
@@ -65,10 +68,17 @@ export default function RefundPolicy() {
       <section>
         <h2>Results and change of mind</h2>
         <p>
-          Haytham Builds does not guarantee a particular number of replies, meetings, customers,
-          or revenue unless a signed agreement expressly says otherwise. A service that was
-          performed as agreed does not become refundable solely because a hoped-for commercial
-          result did not occur or because priorities changed.
+          Haytham Builds does not guarantee a particular number of replies, customers, or revenue.
+          The First Five includes a conditional qualified-call guarantee, set out in the written
+          agreement: if one to four qualified calls have taken place at the end of the 30-day
+          pilot, sending continues without a further service fee until the fifth; if none have
+          taken place, the $1,500 fee is refunded. Cancelled and missed calls do not count. The
+          30-day period runs only while the client replies to interested prospects within 24
+          hours, keeps real calendar availability open, and keeps the agreed audience unchanged,
+          and it pauses while any of these conditions is not met.
+          Other services carry no call guarantee unless a signed agreement expressly says
+          otherwise. A service that was performed as agreed does not become refundable solely
+          because a hoped-for commercial result did not occur or because priorities changed.
         </p>
       </section>
 
@@ -86,8 +96,8 @@ export default function RefundPolicy() {
         <h2>How to request a cancellation or refund</h2>
         <p>
           Email{" "}
-          <a href="mailto:haythammokhtari@haythambuilds.com">
-            haythammokhtari@haythambuilds.com
+          <a href="mailto:haytham@gethaytham.com">
+            haytham@gethaytham.com
           </a>{" "}
           with your name, company, invoice number, payment date, reason for the request, and any
           supporting information. We aim to acknowledge a complete request within five business
@@ -120,8 +130,8 @@ export default function RefundPolicy() {
           <br />
           <a href="tel:+19145065175">+1 914 506 5175</a>
           <br />
-          <a href="mailto:haythammokhtari@haythambuilds.com">
-            haythammokhtari@haythambuilds.com
+          <a href="mailto:haytham@gethaytham.com">
+            haytham@gethaytham.com
           </a>
         </address>
       </section>
